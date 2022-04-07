@@ -1,4 +1,4 @@
-# SocialPort App Tester
+# Eribank Appium Test
 Example project showing a basic structure to run tests on Android with Appium
 ## Requirements
 You need python 3.6+ for this project to be run on your machine.
@@ -22,3 +22,6 @@ adb devices # returns the ID for the device that's connected to the computer
 
 ## Based on
 https://github.com/jonathassilva/appium-practices
+
+## Running the test
+Just type pytest on your terminal and you're good to go
