@@ -1,54 +1,24 @@
-# Mobile Automation using Appium and Python programming language.
+# SocialPort App Tester
+Example project showing a basic structure to run tests on Android with Appium
+## Requirements
+You need python 3.6+ for this project to be run on your machine.
+All requirements are listed on the *requirements.txt* file. You can install all the requirements of this project using pip as decribed below :
 
-This project demonstrates Mobile Automation using Appium and Python programming language.
-Pycharm IDE used for Python.
+Linux:
+```
+> $ python3 -m venv venv # Optional (but recommended) creation of virtual environment for the project
+> $ source venv/bin/activate # Activation of the created virtual environment
+> $ pip install -r requirements.txt # Recursively install all requirements listed on file
+```
 
-Project is associated with the blog - Complete Guide Appium Testing using Python - https://experitest.com/appium-testing/the-complete-guide-appium-testing-using-python
+## Configurations
+It's necessary to update config.py to match your android specs.
+You can find those infos with the following commands
+```
+adb shell getprop ro.kernel.qemu.avd_name # name of your android
+adb shell getprop ro.build.version.release # android version
+adb devices # returns the ID for the device that's connected to the computer
+```
 
-This example will cover:
-
-Basic Test case creation using Python/unittest framework using Appium Python Library/Appium Server.
-
-### Steps to run demo test
-
-1. Clone this git repository
-
-	```
-	git clone
-	```
-
-2. Start Appium Server using Appium Desktop installed in your PC.
-   The project expects the Appium Server to run on localhost:4723. If you run the server to different host and port. Please change the code.
-
-3. Download the Eribank application using URL : https://experitest.s3.amazonaws.com/eribank.apk to c:\\  (The code uses the Application from c:\\ (in windows). Please change the code in case you   change the download location)
-
-4. Import the cloned project in Pycharm (In Pycharm menu, navigate to File > Open or "Open" if no projects are open)
-
-5. Modify following variables in the code if necessary
-
-   Open **AppiumTest.py** and modify following if necessary,
-
-      Appium Server listening host and port.
-
-      ```
-      self.driver = webdriver.Remote("http://localhost:4723/wd/hub",self.dc)
-      ```
-
-      Path of the Eribank application (in case downloaded location is different)
-
-      ```
-      self.dc['app'] = "c:\\eribank.apk"
-      ```
-
-      Device name (After excecuting adb devices. See "Android device recognition" in the blogs)
-
-      ```
-      self.dc['deviceName'] = 'a3ae1c63'
-      ```
-
-
-5. To know how execute the test, (Associated blog link - https://experitest.com/appium-testing/the-complete-guide-appium-testing-using-python)
-      * Make sure you set the Interpreter, Please follow "Interpreter Configuration" in the blog.
-      * Make sure you have imported Appium Dependency, Please follow the "Creating First Test using Appium and Python" in the blog.
-      * Please follow the section "Executing the Test".
-
+## Based on
+https://github.com/jonathassilva/appium-practices
