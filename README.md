@@ -24,4 +24,4 @@ adb devices # returns the ID for the device that's connected to the computer
 https://github.com/jonathassilva/appium-practices
 
 ## Running the test
-Just type pytest on your terminal and you're good to go
+Turn on the appium server either by its CLI or desktop app and type pytest on your terminal and you're good to go
